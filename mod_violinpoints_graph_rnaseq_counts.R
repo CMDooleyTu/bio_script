@@ -22,7 +22,7 @@ data <- read.delim(dataFile, header=TRUE, check.names=FALSE)
 
 # Support different column names
 names(data)[names(data) == 'chr']     <- 'Chr'
-names(data)[names(data) == 'Gene_start_bp']   <- 'Start'
+names(data)[names(data) == 'Gene_start_bp']   <- 'Start' , 'start'
 names(data)[names(data) == 'Gene_end_bp']     <- 'End'
 names(data)[names(data) == 'GeneID']      <- 'Gene ID'
 names(data)[names(data) == 'Strand'] <- 'adjp'
