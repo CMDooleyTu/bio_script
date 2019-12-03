@@ -26,7 +26,7 @@ names(data)[names(data) == 'start']   <- 'Start'
 names(data)[names(data) == 'end']     <- 'End'
 names(data)[names(data) == 'Gene.ID']      <- 'Gene ID'
 names(data)[names(data) == 'Strand'] <- 'adjp'
-names(data)[names(data) == 'Gene.Name'] <- 'Name'
+names(data)[names(data) == 'Gene.name'] <- 'Name'
 # Read samples
 samples <- read.table( samplesFile, header=TRUE, row.names=1 )
 
