@@ -1,6 +1,6 @@
 {
 	"prefix":"igsf11_ex2",
-	"samples": ["fDanAes4", "fDanAlb1", "fDanKya3", "fDreABz2"],
+	"samples": ["fDanAes4", "fDanAlb1", "fDanKya3", "fDreABz2", "grcz11"],
 	"query": "/ebio/ecnv/dooley/bio_script/blast/ENSDART00000191793_ex2.fasta",
 	"range":[-500, 500],
 	"defaults": {
