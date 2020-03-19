@@ -90,12 +90,6 @@ if (grepl("violin", plotStyle)) {
     for (i in 1:nrow(data)) {
         p <- ggplot(counts[counts$id == i,],
                aes(x=condition, y=count, color=condition)) +
-            MinMeanSEMMax <- function(x) {
-  v <- c(min(x), mean(x) - sd(x)/sqrt(length(x)), mean(x), mean(x) + sd(x)/sqrt(length(x)), max(x))
-  names(v) <- c("ymin", "lower", "middle", "upper", "ymax")
-  v
-                                          }
-
             geom_boxplot(width=0.1, outlier.shape=NA) +
             stat_summary(fun.data=MinMeanSEMMax) +
             labs(x="condition", y="Normalised Counts", title=countData$name[i]) +
