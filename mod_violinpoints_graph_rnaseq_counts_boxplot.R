@@ -98,7 +98,7 @@ if (grepl("violin", plotStyle)) {
                   axis.text.x= element_blank(),
                   plot.title = element_text(hjust = 0.5, face="bold"))
         if (plotStyle == "violinpoints") {
-            p <- p + geom_jitter(width = 0.5)
+            p <- p + geom_jitter(width = 0.1)
         }
         if (grepl("pdf$", outputFile)) {
             print(p)
