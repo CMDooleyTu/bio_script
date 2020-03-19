@@ -103,7 +103,7 @@ if (grepl("violin", plotStyle)) {
             #geom_violin() + 
             #stat_summary(fun.data=data_summary, shape=3, size=1, color="black") +
             #geom_boxplot(width=1, outlier.shape=NA, weight=2) +
-            stat_summary(fun.data=data_summary, shape=3, size=1, linetype="twodash") +
+            stat_summary(fun.data=data_summary, shape=3, size=1) +
             #geom_crossbar(stat="summary", fun.y=data_summary, fun.ymax=max, fun.ymin=min) +
             #stat_summary(fun.data = mean_se, geom = "errorbar") +
             labs(x="condition", y="Normalised Counts", title=countData$name[i]) +
