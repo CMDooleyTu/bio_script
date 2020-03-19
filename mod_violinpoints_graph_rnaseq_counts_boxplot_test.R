@@ -22,7 +22,7 @@ data_summary <- function(x) {
    mu <- mean(x)
    sigma1 <- mu-sd(x)
    sigma2 <- mu+sd(x)
-   return(c(y=mu,ymin=sigma1,ymax=sigma2))
+   return(c(m=mu,ymin=sigma1,ymax=sigma2))
 }
 
 # Read data
