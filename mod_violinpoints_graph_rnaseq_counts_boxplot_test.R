@@ -17,6 +17,14 @@ plotStyle      <- ifelse(is.na(Args[9]),  "violinpoints",            Args[9])
 shapeVariable  <- ifelse(is.na(Args[10]), "none",               Args[10])
 colourVariable <- ifelse(is.na(Args[11]), "stage",              Args[11])
 
+#functions for stats
+data_summary <- function(x) {
+   mu <- mean(x)
+   sigma1 <- mu-sd(x)
+   sigma2 <- mu+sd(x)
+   return(c(y=mu,ymin=sigma1,ymax=sigma2))
+}
+
 # Read data
 data <- read.delim(dataFile, header=TRUE, check.names=FALSE)
 
@@ -93,6 +101,7 @@ if (grepl("violin", plotStyle)) {
         p <- ggplot(counts[counts$id == i,],
                aes(x=condition, y=count, color=condition)) +
             geom_boxplot(width=0.1, outlier.shape=NA) +
+            geom_crossbar(stat="summary", fun.y=data_summary, fun.ymax=max, fun.ymin=min) +
             stat_summary(fun.data = mean_se, geom = "errorbar") +
             labs(x="condition", y="Normalised Counts", title=countData$name[i]) +
             theme_bw() +
