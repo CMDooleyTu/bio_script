@@ -100,7 +100,8 @@ if (grepl("violin", plotStyle)) {
     for (i in 1:nrow(data)) {
         p <- ggplot(counts[counts$id == i,],
                aes(x=condition, y=count, color=condition)) +
-            geom_violin() + stat_summary(fun.data=data_summary)
+            #geom_violin() + stat_summary(fun.data=data_summary)
+            geom_box() + stat_summary(fun.data=data_summary) +
             #geom_boxplot(width=0.1, outlier.shape=NA) +
             #geom_crossbar(stat="summary", fun.y=data_summary, fun.ymax=max, fun.ymin=min) +
             #stat_summary(fun.data = mean_se, geom = "errorbar") +
