@@ -93,7 +93,7 @@ if (grepl("violin", plotStyle)) {
         p <- ggplot(counts[counts$id == i,],
                aes(x=condition, y=count, color=condition)) +
             geom_boxplot(width=0.1, outlier.shape=NA) +
-            stat_boxplot(geom = 'errorbar') +
+            stat_summary(fun.data = mean_se, geom = "errorbar") +
             labs(x="condition", y="Normalised Counts", title=countData$name[i]) +
             theme_bw() +
             theme(legend.position='right',
