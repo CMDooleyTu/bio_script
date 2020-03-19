@@ -31,6 +31,13 @@ names(data)[names(data) == 'Gene.ID']      <- 'Gene ID'
 names(data)[names(data) == 'Strand'] <- 'adjp'
 names(data)[names(data) == 'Gene.name'] <- 'Name'
 names(data)[names(data) == 'Gene_Name'] <- 'Name'
+
+#set min and max function
+MinMeanSEMMax <- function(x) {
+  v <- c(min(x), mean(x) - sd(x)/sqrt(length(x)), mean(x), mean(x) + sd(x)/sqrt(length(x)), max(x))
+  names(v) <- c("ymin", "lower", "middle", "upper", "ymax")
+  v
+}
 # Read samples
 samples <- read.table( samplesFile, header=TRUE, row.names=1 )
 
