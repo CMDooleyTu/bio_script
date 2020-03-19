@@ -101,7 +101,7 @@ if (grepl("violin", plotStyle)) {
         p <- ggplot(counts[counts$id == i,],
                aes(x=condition, y=count, color=condition)) +
             #geom_violin() + stat_summary(fun.data=data_summary)
-            stat_summary(fun.data=data_summary, shape=3, size=3) +
+            stat_summary(fun.data=data_summary, shape=3, size=2) +
             #geom_boxplot(width=0.1, outlier.shape=NA) +
             #geom_crossbar(stat="summary", fun.y=data_summary, fun.ymax=max, fun.ymin=min) +
             #stat_summary(fun.data = mean_se, geom = "errorbar") +
@@ -112,7 +112,7 @@ if (grepl("violin", plotStyle)) {
                   axis.text.x= element_blank(),
                   plot.title = element_text(hjust = 0.5, face="bold"))
         if (plotStyle == "violinpoints") {
-            p <- p + geom_jitter(width = 0.1)
+            p <- p + geom_jitter(size=2, width = 0.1)
         }
         if (grepl("pdf$", outputFile)) {
             print(p)
