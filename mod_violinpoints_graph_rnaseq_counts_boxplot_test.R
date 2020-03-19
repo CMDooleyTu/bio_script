@@ -32,12 +32,7 @@ names(data)[names(data) == 'Strand'] <- 'adjp'
 names(data)[names(data) == 'Gene.name'] <- 'Name'
 names(data)[names(data) == 'Gene_Name'] <- 'Name'
 
-#set min and max function
-MinMeanSEMMax <- function(x) {
-  v <- c(min(x), mean(x) - sd(x)/sqrt(length(x)), mean(x), mean(x) + sd(x)/sqrt(length(x)), max(x))
-  names(v) <- c("ymin", "lower", "middle", "upper", "ymax")
-  v
-}
+
 # Read samples
 samples <- read.table( samplesFile, header=TRUE, row.names=1 )
 
@@ -98,7 +93,6 @@ if (grepl("violin", plotStyle)) {
         p <- ggplot(counts[counts$id == i,],
                aes(x=condition, y=count, color=condition)) +
             geom_boxplot(width=0.1, outlier.shape=NA) +
-            stat_summary(fun.data=MinMeanSEMMax) +
             labs(x="condition", y="Normalised Counts", title=countData$name[i]) +
             theme_bw() +
             theme(legend.position='right',
