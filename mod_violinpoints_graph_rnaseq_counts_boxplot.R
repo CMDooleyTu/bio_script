@@ -25,8 +25,11 @@ names(data)[names(data) == 'chr']     <- 'Chr'
 names(data)[names(data) == 'Gene_start_bp']   <- 'Start'
 names(data)[names(data) == 'start']   <- 'Start'
 names(data)[names(data) == 'Gene_end_bp']     <- 'End'
+names(data)[names(data) == 'end']     <- 'End'
 names(data)[names(data) == 'GeneID']      <- 'Gene ID'
+names(data)[names(data) == 'Gene.ID']      <- 'Gene ID'
 names(data)[names(data) == 'Strand'] <- 'adjp'
+names(data)[names(data) == 'Gene.name'] <- 'Name'
 names(data)[names(data) == 'Gene_Name'] <- 'Name'
 # Read samples
 samples <- read.table( samplesFile, header=TRUE, row.names=1 )
