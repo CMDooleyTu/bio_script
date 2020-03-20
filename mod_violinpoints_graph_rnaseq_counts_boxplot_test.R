@@ -107,7 +107,7 @@ if (grepl("violin", plotStyle)) {
             #geom_crossbar(stat="summary", fun.y=data_summary, fun.ymax=max, fun.ymin=min) +
             #stat_summary(fun.data = mean_se, geom = "errorbar") +
             labs(x="condition", y="Normalised Counts", title=countData$name[i]) +
-            theme_bw() +
+            #theme_bw() +
             theme(legend.position='right',
                   axis.ticks.x = element_blank(),
                   axis.text.x= element_blank(),
