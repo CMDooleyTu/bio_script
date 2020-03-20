@@ -108,6 +108,7 @@ if (grepl("violin", plotStyle)) {
             #stat_summary(fun.data = mean_se, geom = "errorbar") +
             labs(x="condition", y="Normalised Counts", title=countData$name[i]) +
             #theme_bw() +
+            theme_minimal() +
             theme(legend.position='right',
                   axis.ticks.x = element_blank(),
                   axis.text.x= element_blank(),
