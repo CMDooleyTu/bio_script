@@ -39,6 +39,7 @@ names(data)[names(data) == 'Gene.ID']      <- 'Gene ID'
 names(data)[names(data) == 'Strand'] <- 'adjp'
 names(data)[names(data) == 'Gene.name'] <- 'Name'
 names(data)[names(data) == 'Gene_Name'] <- 'Name'
+names(data)[names(data) == 'Gene_name'] <- 'Name'
 
 
 # Read samples
