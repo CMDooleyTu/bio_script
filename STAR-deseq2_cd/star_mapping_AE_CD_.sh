@@ -8,7 +8,7 @@ while getopts 'o:s:d:' c; do
 	esac
 done 
 
-cd $workdir 
+#cd $workdir 
 
 #mkdir STAR_output
 #mkdir gene_counts
