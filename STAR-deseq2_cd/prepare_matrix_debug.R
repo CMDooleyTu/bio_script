@@ -6,7 +6,7 @@ samples = read.table(arguments[2], sep = "\t", h = T, stringsAsFactors = F)
 
 print(paste0("working directory: ", getwd()))
 print(head(samples))
-
+print(str(samples))
 #find all matrices 
 #all_files <- list.files(path = "gene_counts", pattern = ".count")
 
