@@ -42,7 +42,7 @@ col2_df <- data.frame(matrix(nrow = nrow(gnames),ncol = 0))
 
 sampnames <- c()
 
-samples <- read.table(arguments[1], sep = "\t", h = T)
+samples <- read.table(arguments[2], sep = "\t", h = T)
 
 #make sure that the colums in the resulting data frame are in the same order as in the sample table
 #as required by DESeq2
