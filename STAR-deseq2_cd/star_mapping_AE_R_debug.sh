@@ -26,4 +26,4 @@ cd $workdir
 
 #done
 
-Rscript $scriptdir/prepare_matrix_debug.R $workdir $sampfile
+Rscript $scriptdir/prepare_matrix_debug_2.R $workdir $sampfile
