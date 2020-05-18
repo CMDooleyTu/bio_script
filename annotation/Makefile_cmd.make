@@ -111,7 +111,8 @@ Danio_rerio.GRCz11.100.chr.gtf: Danio_rerio.GRCz11.100.chr.gtf.gz
 
 # convert to .bed
 Danio_rerio.GRCz11.100.chr.bed: Danio_rerio.GRCz11.100.chr.gtf
-	gtf2bed < Danio_rerio.GRCz11.100.chr.gtf > Danio_rerio.GRCz11.100.chr.bed
+	#gtf2bed < Danio_rerio.GRCz11.100.chr.gtf > Danio_rerio.GRCz11.100.chr.bed
+	awk '{ if ($0 ~ "transcript_id") print $0; else print $0" transcript_id \"\";"; }' Danio_rerio.GRCz11.100.chr.gtf | gtf2bed - > Danio_rerio.GRCz11.100.chr.bed
 
 # ~~~~~ ENSEMBL GRCz11  ~~~~~ #
 # generate the Ensembl hg19 annotations .bed file
